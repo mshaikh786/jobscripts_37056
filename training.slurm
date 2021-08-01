@@ -11,7 +11,7 @@
 
 #activate your conda enviroment 
 source ~/miniconda3/bin/activate porous_media
-export BASE_DIR=$PWD
+export BASE_DIR=../
 
 # In case you get an error of port not avialable, try changing the port number incrementally.
 DASHBOARD_PORT=10010
@@ -26,5 +26,5 @@ EOF
 
 
 cd ${BASE_DIR}/code/pytorch
-python main.py --dataset 3D --dataroot ${BASE_DIR}/berea_ti --imageSize 64 --batchSize 128 --ngf 64 --ndf 16 --nz 512 --niter 1000 --lr 1e-5 --workers ${SLURM_CPUS_PER_TASK} --ngpu ${SLURM_GPUS} --cuda
+python main.py --dataset 3D --dataroot ${BASE_DIR}/../berea_ti --imageSize 64 --batchSize 128 --ngf 64 --ndf 16 --nz 512 --niter 1000 --lr 1e-5 --workers ${SLURM_CPUS_PER_TASK} --ngpu ${SLURM_GPUS} --cuda
 
