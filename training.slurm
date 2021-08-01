@@ -25,6 +25,6 @@ http://localhost:${DASHBOARD_PORT}
 EOF
 
 
-cd code/pytorch
+cd ${BASE_DIR}/code/pytorch
 python main.py --dataset 3D --dataroot ${BASE_DIR}/berea_ti --imageSize 64 --batchSize 128 --ngf 64 --ndf 16 --nz 512 --niter 1000 --lr 1e-5 --workers ${SLURM_CPUS_PER_TASK} --ngpu ${SLURM_GPUS} --cuda
 
